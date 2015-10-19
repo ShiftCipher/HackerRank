@@ -1,2 +1,1 @@
-# hackerrankjs
-HackerRank JS Domains
+# HackerRank
