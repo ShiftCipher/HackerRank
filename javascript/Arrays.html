@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Algoritmia</title>
+</head>
+<body>
+
+<style>
+
+body {
+	background-color: black;
+	-webkit-font-smoothing: antialiased !important;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	font-family: Helvetica, sans-serif;
+	color: white;
+	font-size: 90px;
+}
+
+h2 {
+	font-family: Helvetica, sans-serif;
+	color: red;
+	font-size: 30px;
+}
+
+h3 {
+	font-family: Century Gothic, sans-serif;
+	color: white;
+	background-color: color: #333333;
+	font-size: 20px;
+}
+
+h4 {
+	font-family: Century Gothic, sans-serif;
+	color: yellow;
+	background-color: silver;
+	font-size: 12px;
+}
+
+</style>
+
+<h1>Algoritmia</h1>
+
+<h2>Ejercicio 1</h2>
+
+<script>
+var numeros = [];
+
+for (var i = 1; i <= 10; i++){
+	var numero = window.prompt("Ingresa un numero: ");
+	numeros.push(Number(numero));
+}
+
+document.write("<h3>" + numeros + "</h3>");
+
+</script>
+
+<h2>Ejercicio 2</h2>
+
+<script>
+var numerosA = [];
+var numerosB = [];
+var numeros = [];
+
+for (var i = 1; i <= 8; i++){
+	var numeroa = window.prompt("Ingresa un numero: ");
+	numerosA.push(Number(numeroa));
+}
+
+for (var i = 1; i <= 8; i++){
+	var numerob = window.prompt("Ingresa un numero: ");
+	numerosB.push(Number(numerob));
+}
+
+for (var i = 0; i < 8; i++){
+	numeros.push(Number(numerosA[i]) + Number(numerosB[i]));
+}
+
+document.write("<h3>" + numeros + "</h3>");
+
+</script>
+
+<h2>Ejercicio 3</h2>
+
+<script>
+var numeros = [];
+var mayor = 0;
+
+for (var i = 0; i < 10; i++){
+	var numero = window.prompt("Ingresa un numero: ");
+	if (i > 0) {
+		if (numero > Number(numeros[i - 1])){
+			mayor = numero;
+		}
+	}
+	numeros.push(Number(numero));
+}
+
+document.write("<h3>" + mayor + "</h3>");
+
+</script>
+
+<h2>Ejercicio 4</h2>
+
+<script>
+
+var numeros = [];
+var elevados = [];
+
+for (var i = 1; i <= 10; i++){
+	var numero = window.prompt("Ingresa un numero: ");
+	numero = Number(numero);
+	numeros.push(numero);
+	elevados.push(numero * numero);
+}
+
+document.write("<h3>" + numeros + "</h3>");
+document.write("<h3>" + elevados + "</h3>");
+
+</script>
+
+<h2>Ejercicio 5</h2>
+
+<script>
+
+var numerosA = [];
+var numerosB = [];
+var numeros = [];
+
+for (var i = 1; i <= 10; i++){
+	var numeroa = window.prompt("Ingresa un numero: ");
+	numerosA.push(Number(numeroa));
+}
+
+for (var i = 1; i <= 10; i++){
+	var numerob = window.prompt("Ingresa un numero: ");
+	numerosB.push(Number(numerob));
+}
+
+for (var i = 0; i < 10; i++){
+	if ((numerosA[i]) == Number(numerosB[i])) {
+		document.write("<h3>Iguales</h3>")
+	} else {
+		document.write("<h3>Diferentes</h3>")
+	}
+}
+
+document.write("<h3>" + numeros + "</h3>");
+
+</script>
+
+<h2>Ejercicio 6</h2>
+
+<script>
+
+var numerosA = [];
+var numerosB = [];
+var numeros = [];
+var SIZE = 20;
+
+for (var i = 0; i < SIZE; i++){
+	var numeroa = window.prompt("Ingresa un numero: ");
+	numerosA.push(Number(numeroa));
+}
+
+for (var i = SIZE; i > 0; i--){
+
+ 	var numerob = window.prompt("Ingresa un numero: ");
+	numerosB[i] = Number(numerob);
+}
+
+for (var i = 0, j = SIZE; i < SIZE; i++, j--){
+	numeros.push(Number(numerosA[i]) + Number(numerosB[j]));
+}
+
+document.write("<h3>" + numeros + "</h3>");
+</script>
+
+
+<h2>Ejercicio 7</h2>
+
+<script>
+var numeros = [];
+var SIZE = 7;
+var frecuencia = 0;
+
+for (var i = 0; i < SIZE; i++){
+	var numero = window.prompt("Ingresa un numero: ");
+	numeros.push(Number(numero));
+}
+
+var gate = true;
+
+while (gate) {
+	for (var j = 1; j < SIZE; j++){
+		if (numeros[i] = numeros[j]) {
+			frecuencia = frecuencia + 1;
+			if (i > j) {
+				gate = false;
+			};
+		};
+	}
+}
+
+document.write("<h3>" + numeros + "</h3>");
+document.write("<h3>" + clean + "</h3>");
+
+</script>
+
+<h2>Ejercicio 8</h2>
+
+<script>
+var usuarios = [];
+var passwords = [];
+var direcciones = [];
+var cargos = [];
+var roles = [];
+var cantidad, usuario, direccion, cargo, rol, password, continuar, pregunta;
+
+cantidad = window.prompt("Ingresa el limite de usuarios: ");
+cantidad = Number(cantidad);
+while (cantidad > 0){
+	usuario = window.prompt("Ingresa el usuario: ");
+	direccion = window.prompt("Ingresa la direccion: ");
+	cargo = window.prompt("Ingresa el cargo: ");
+	rol = window.prompt("Ingresa el rol: ");
+	password = window.prompt("Ingresa una password: ");
+
+	usuarios.push(usuario);
+	passwords.push(password);
+	direcciones.push(direccion);
+	cargos.push(cargo);
+	roles.push(rol);
+	cantidad = cantidad - 1;
+}
+
+do {
+	usuario = window.prompt("Ingresa tn usuario: ");
+	password = window.prompt("Ingresa tu password: ")
+	for (var i = 0; i < usuarios.length; i++) {
+		if (usuario == usuarios[i]) {
+			console.log("Usuario");
+		} else {
+			console.log("Usuario Incorrecto");
+		}
+		if (password == passwords[i]) {
+			document.write("<h3>Nombre del Usuario: " + usuarios[i] + "</h3>");
+			document.write("<h3>Direccion: " + direcciones[i] + "</h3>");
+			document.write("<h3>Cargo: " + cargos[i] + "</h3>");
+			document.write("<h3>Rol: " + roles[i] + "</h3>");
+		} else {
+			console.log("Password Incorrecta");
+		}
+	}
+	continuar = window.prompt("Deseo continuar digitando datos? S/N");
+	switch (continuar) {
+		case "Si", "si", "sI", "SI":
+			pregunta = true;
+		case "No", "no", "nO", "NO":
+			pregunta = false;
+			break;
+	}
+} while (pregunta);
+
+</script>
+
+
+
+<h2>Ejercicio 9</h2>
+
+<script>
+var cantidad, rol, roles, privilegio, permisos, privilegios;
+cantidad = window.prompt("Ingresa la cantidad de usuarios: ");
+cantidad = Number(cantidad);
+privilegios = [];
+roles = [];
+configuracion = [];
+
+while (cantidad > 0) {
+	rol = window.prompt("Ingresa el rol: ");
+	roles.push(rol);
+	permisos = window.prompt("Ingresa la cantidad de permisos del rol: ");
+	configuracion.push(permisos);
+	for (var i = 0; i < permisos; i++) {
+		privilegio = window.prompt("Ingresa el privilegio " + i + 1 + " para el rol " + rol + ":");
+			privilegios.push(privilegio);
+	}
+	cantidad = cantidad - 1;
+}
+
+do {
+	var usuario = window.prompt("Busca un un rol: ")
+	for (var i = 0; i < roles.length; i++) {
+		if (usuario == roles[i]) {
+			document.write("<h3>La cantidad de privilegios del rol es: " + configuracion[i]);
+			for (var j = 0; j < privilegios.length; j++) {
+				document.write("<h3>Privilegio" + j + "para el rol " + rol + " es :" + privilegios[i + j]);
+			}
+		} else {
+			console.log("Rol No Encontrado");
+		}
+	}
+
+	continuar = window.prompt("Deseo continuar digitando datos? S/N");
+	switch (continuar) {
+		case "Si", "si", "sI", "SI":
+			pregunta = true;
+		case "No", "no", "nO", "NO":
+			pregunta = false;
+			break;
+	}
+} while (pregunta);
+
+</script>
+
+<h2>Ejercicio 10</h2>
+
+<script>
+var cantidad, nombre, nombres, produccion, producido, promedio, productivos, promedios, total, totales, producidos;
+nombres = [];
+promedios = [];
+producidos = [];
+dias = [];
+totales = [];
+productivos = 0;
+dia = 0;
+
+cantidad = window.prompt("Ingresa la cantidad de empleados: ");
+produccion = window.prompt("Ingresa la produccion del mes: ");
+
+for (var i = 0; i < cantidad.length; i++) {
+	nombre = window.prompt("Ingresa el nombre del empleado: ");
+	nombres.push(nombre);
+	total = 0;
+	for (var i = 0; i < 31; i++) {
+		producido = window.prompt("Ingresa la cantidad de unidades del dia " + i + 1 + ":");
+		producido = Number(producido);
+		producidos.push(producido);
+		total = total + pruducido;
+	}
+	promedio = total / 30;
+	promedios.push(promedio);
+}
+
+for (var i = 0; i < producidos.length; i++) {
+	if (producidos[i] > promedio) {
+		productivos = productivos + 1;
+	}
+	if (productivos[i] < productivos[i + 1]) {
+		dia = productivos[i + 1];
+		dias.push(dia);
+	}
+}
+
+</script>
+
+
+</body>
+</html>

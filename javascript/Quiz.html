@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Algoritmia Examen</title>
+</head>
+<body>
+
+<style> 
+
+body {
+	background-color: black;
+	-webkit-font-smoothing: antialiased !important;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	font-family: Helvetica, sans-serif;
+	color: white;
+	font-size: 90px;
+}
+
+h2 {
+	font-family: Helvetica, sans-serif;
+	color: red;
+	font-size: 30px;
+}
+
+h3 {
+	font-family: Century Gothic, sans-serif;
+	color: white;
+	background-color: color: #333333;
+	font-size: 20px;
+}
+
+h4 {
+	font-family: Century Gothic, sans-serif;
+	color: yellow;
+	background-color: silver;
+	font-size: 12px;
+}
+</style>
+
+<h1>Algoritmia</h1>
+
+<h2>DANIEL FELIPE TARAZONA VASQUEZ</h2>
+<h2>MIGUEL ANGEL QUINTERO MONTOYA</h2>
+
+<h2>1. En una fabrica de computadores se planea ofrecer a los clientes un descuento que dependera del numero de 
+computadoras que compre. Si las computadoras son menos de 5 se les dara un 10% de descuento sobre el total de la compra, si el numero de computadoras es mayor o igual a 5 pero menos de 10 se le otorga un 20% de descuento; y si son 10 o mas se 
+le da un 40% de descuento. El precio de cada computadora es de 11000 mil.
+</h2>
+
+<h2>2. En una llantera se ha establecido una promocion de llantas marca Ponchadas, dicha promocion consiste en lo siguiente:
+Si se compra menos de 5 llantas el precio es de 300 cada una, de 250 si se compra de 5 a 10, y de 200 si se compran mas de 10. Obtener la cantidad de dinero que debe de pagar
+cada persona por cada una de las llantas que compra y la que tiene que pagar por la total de la compra.
+</h2>
+
+<h2>3. En un juego de preguntas a la que se responde SI o NO, gana quien responda correctamente las tres preguntas. Si se responde mal cualquiera de ellas, 
+ya no se pregunta la siguiente y termina el juego. Las preguntas son: A.¿Colon Descubrio America?, B.¿La Independencia de Mexico fue en el Año 1810?, C.¿The Doors
+fue un grupo de Rock Americano?.
+</h2>
+
+<h2>SOLUCION 1</h2>
+
+<script>
+var descuento;
+var cantidad = window.prompt("Ingresa la cantidad de computadoras: ");
+var valor = 11000;
+var subtotal = cantidad * valor;
+var total; 
+
+if (cantidad > 0) {
+	if (cantidad < 5) {
+	descuento = 0.9;
+	total = subtotal * descuento;
+
+	};
+	if (cantidad < 10) {
+		if (cantidad >= 5) {
+			descuento = 0.8;
+			total = subtotal * descuento;
+		};
+	};
+	if (cantidad > 10) {
+		descuento = 0.4;
+		total = subtotal * descuento;
+	};
+};
+
+descuento = subtotal - total;
+
+console.log("El subtotal de la compra es: " + subtotal);
+console.log("El descuento de tu compra es: " + descuento);
+console.log("El total de tu compra es: " + total);
+
+</script>
+
+
+
+<h2>SOLUCION 2</h2>
+
+<script>
+
+var cantidad = window.prompt("Ingresa la cantidad de llantas: ");
+var precio; 
+var total;
+
+
+if (cantidad > 0) {
+	if (cantidad < 5) {
+	precio = 300;
+
+	};
+	if (cantidad < 10) {
+		if (cantidad >= 5) {
+			precio = 250;
+		};
+	};
+	if (cantidad > 10) {
+		precio = 200;
+	};
+};
+
+total = cantidad * precio;
+
+console.log("Pagaras por cada llanta: " + precio);
+console.log("El total de tu compra es: " + total);
+</script>
+
+<h2>SOLUCION 3</h2>
+
+<script>
+
+var preguntas = ["Responde SI o NO. A.¿Colon Descubrio America?", "B.¿La Independencia de Mexico fue en el Año 1810?", "C.¿The Doors fue un grupo de Rock Americano?"];
+var respuestas = [];
+
+for (var i = 0; i < 3; i++) {
+	respuesta = window.prompt(preguntas[i]);
+	respuestas.push(respuesta);
+	console.log(respuestas);
+
+	switch(respuestas[i]) {
+	case "No":
+		console.log("Perdiste");
+		break;
+	case "NO":
+		console.log("Perdiste");
+		break;
+	case "no":
+		console.log("Perdiste");
+		break;
+	case "nO":
+		console.log("Perdiste");
+		break;
+	case "SI":
+		console.log("Ganaste");
+		break;
+	case "Si":
+		console.log("Ganaste");
+		break;
+	case "si":
+		console.log("Ganaste");
+		break;
+	case "sI":
+		console.log("Ganaste");
+		break;
+	default:
+		if (respuesta[i] == "Perdiste") {
+		console.log("Perdiste el Juego. Intenta de Nuevo")
+		};
+	};
+};
+
+
+<!-- Javascript no posee manipulacion de UI para el Alert Prompt asi que usamos el Break como Ruptura -->
+
+</script>	
+
+
+</body>
+</html>

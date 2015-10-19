@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Algoritmia 2</title>
+</head>
+<body>
+
+<style> 
+
+body {
+	background-color: black;
+	-webkit-font-smoothing: antialiased !important;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	font-family: Helvetica, sans-serif;
+	color: white;
+	font-size: 90px;
+}
+
+h2 {
+	font-family: Helvetica, sans-serif;
+	color: red;
+	font-size: 30px;
+}
+
+h3 {
+	font-family: Century Gothic, sans-serif;
+	color: white;
+	background-color: color: #333333;
+	font-size: 20px;
+}
+
+h4 {
+	font-family: Century Gothic, sans-serif;
+	color: yellow;
+	background-color: silver;
+	font-size: 12px;
+}
+</style>
+
+<h1>Algoritmia</h1>
+
+
+<h2>QUIZ ESTRUCTURAS ITERATIVAS</h2>
+
+
+<h2>EJERCICIO 1</h2>
+
+<script>
+var numero = window.prompt("Ingresa un numero: ");
+var operador = parseInt(numero);
+var pares = 0;
+var impares = 0;
+var promedio;
+var cantidad = 0;
+
+while (operador > 0) {
+	operador = operador % 10;
+	if ((operador % 2) == 0) {
+		console.log(operador, "Es par");
+		pares = pares + operador;
+	} else {
+		impares = impares + operador;
+		console.log(impares);
+		console.log(operador, "Es Impar");
+		cantidad++;
+	};
+	numero = parseInt(numero / 10);
+	operador = numero;
+};
+
+promedio = impares / cantidad;
+
+if (promedio == NaN || impares == 0) {
+	promedio = "No hay numeros impares";
+};
+
+document.write("<h3>La sumatoria de los numeros pares es: ", pares,"</h3>");
+document.write("<h3>El promedio de los numeros impares es: ", promedio,"</h3>");
+
+</script>
+
+
+
+<h2>EJERCICIO 2</h2>
+
+
+<script>
+
+var cantidad = window.prompt("Ingresa la cantidad de numeros a procesar: ");
+cantidad = cantidad;
+var numeros = cantidad;
+var total = 0;
+
+while (cantidad > 0) {
+	var numero = window.prompt("Ingresa un numero: ");
+	total = total + parseInt(numero);
+	console.log(total)
+	cantidad = cantidad - 1;
+}
+
+promedio = total / numeros;
+
+document.write("<h3>El promedio de los numeros es: ", promedio,"</h3>");
+
+</script>
+
+<h2>EJERCICIO 3</h2>
+
+<script>
+
+var cantidad = window.prompt("Ingresa la cantidad de numeros a procesar: ");
+cantidad = cantidad;
+var numeros = cantidad;
+var total = 0;
+var pares = 0;
+
+while (cantidad > 0) {
+	var numero = window.prompt("Ingresa un numero: ");
+	if ((numero % 2) == 0) {
+		total = total + parseInt(numero);
+		pares++;
+	};
+	console.log(total)
+	cantidad = cantidad - 1;
+}
+
+promedio = total / numeros;
+
+document.write("<h3>La cantidad de numeros pares es: ", pares,"</h3>");
+
+document.write("<h3>El promedio de los numeros es: ", promedio,"</h3>");
+
+
+</script>
+
+
+
+<h2>EJERCICIO 4</h2>
+
+<script>
+var hombres = 0;
+var mujeres = 0;
+
+
+do {
+var persona = window.prompt("Ingresa el Sexo de la persona M o F: ");
+
+if (persona == "M" || persona == "m") {
+	hombres = hombres + 1;
+	console.log("Hombres: ", hombres);
+} else {
+	if (persona == "F" || persona == "f") {
+		mujeres = mujeres + 1;
+		console.log("Mujeres: ", mujeres);
+	}
+		
+}; 
+
+var continuar = window.prompt("Desea continuar? Si o No: ");
+
+switch (continuar) {
+	case "N":
+	case "n":
+	case "No":
+	case "no": 
+	case "nO":
+	case "NO":
+		continuar = false;
+		break;
+	default:
+		continuar = true;
+};
+
+console.log(continuar);
+
+} while (continuar);
+
+document.write("<h3>El total de mujeres es: ", mujeres,"</h3>");
+document.write("<h3>El total de hombres es: ", hombres,"</h3>");
+
+</script>
+
+<h2>EJERCICIO 5</h2>
+
+<script>
+var operador = 0;
+var numero = window.prompt("Ingresa un numero: ");
+
+for (var i = numero - 1; i >= 1; i--) {
+	if (numero % i == 0) {
+		console.log(i);
+		operador = operador + i;
+	};
+};
+
+console.log(operador);
+
+if (operador == numero) {
+	document.write("<h3>El numero ", numero, " es un numero perfecto</h3>");
+};
+
+</script>
+
+
+</body>
+</html>

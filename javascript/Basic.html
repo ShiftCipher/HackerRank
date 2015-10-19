@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Algoritmia</title>
+</head>
+<body>
+
+<style> 
+
+body {
+	background-color: black;
+	-webkit-font-smoothing: antialiased !important;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	font-family: Helvetica, sans-serif;
+	color: white;
+	font-size: 90px;
+}
+
+h2 {
+	font-family: Helvetica, sans-serif;
+	color: red;
+	font-size: 30px;
+}
+
+h3 {
+	font-family: Century Gothic, sans-serif;
+	color: white;
+	background-color: color: #333333;
+	font-size: 20px;
+}
+
+h4 {
+	font-family: Century Gothic, sans-serif;
+	color: yellow;
+	background-color: silver;
+	font-size: 12px;
+}
+
+</style>
+
+<h1>Algoritmia</h1>
+
+<h2>EJERCICIO 1</h2>
+<script>
+var estudiantes = [];
+var cantidad = window.prompt("Digita la cantidad de estudiantes: ");
+for (i = 0; i < cantidad; i++) { 
+	var estudiante = window.prompt("Digita el nombre del estudiante: ");
+	estudiantes.push(estudiante);
+}
+document.write("<h3>Tus estudiantes son: ", estudiantes, "</h3>")
+
+</script>
+
+<h2>EJERCICIO 2</h2>
+<script>
+var nombre = window.prompt("Ingresa tu nombre: ");
+var edad = window.prompt("Ingresa tu edad: ");
+document.write("<h3>Tu nombre es: ", nombre, " y tu edad es: ", edad, "</h3>");
+</script>
+
+<h2>EJERCICIO 3</h2>
+<script>
+var horas = window.prompt("Ingresa las horas trabajadas: ");
+var valor = window.prompt("Ingresa el valor de las horas: ");
+
+if (!isNaN(horas) || !isNaN(valor)) {
+	function calcular (horas, valor) {
+	return horas * valor;
+	}
+}
+document.write("<h3>Tu sueldo es: ", calcular(horas,valor), "<h3>");
+</script>
+
+<h2>EJERCICIO 4</h2>
+<script>
+var nombre = window.prompt("Ingresa el nombre del Elefante: ");
+var peso = window.prompt("Ingresa el peso del Elefante en Libras: ");
+var longitud = window.prompt("Ingresa la longitud del Elefante en Pies: ");
+
+if (peso != null || !isNaN(peso)) {
+	function kilo (peso) {
+		return peso / 2;
+	}
+}
+
+if (longitud != null || !isNaN(longitud)) {
+function metros (longitud){
+		return longitud / 3.2808;
+	}
+}
+document.write("<h3>El nombre del elefante es: ", nombre, ", su peso en Kilogramos es: ", kilo(peso), " Kg y su longitud es de: ", metros(longitud), " metros</h3>");
+</script>
+
+<h2>EJERCICIO 5</h2>
+<script>
+document.write("<h3>Conversor de Horas a Minutos o Segundos.</h3>");
+
+var horas = window.prompt("Ingresa las Horas: ");
+
+if (horas != null || !isNaN(horas)) {
+	var dias = horas / 24;
+	var minutos = horas * 60;
+	var segundos = minutos * 60;
+	document.write("<h3>Minutos: ", minutos, "<h3>\n");
+	document.write("<h3>Segundos: ", segundos, "<h3>\n");
+	document.write("<h3>Dias: ", dias, "<h3>\n");
+} 
+</script>
+
+<h2>EJERCICIO 6</h2>
+<script>
+var notas = [];
+var promedio; 
+var total = 0;
+
+document.write("<h3>Califica a un grupo de estudiantes e ingresa sus notas. </h3>");
+
+for (var i = 1; i < 5; i++) {
+	var nota = window.prompt("Ingresa la nota: ");
+	total = total + parseInt(nota);
+	if (nota != null || !isNaN(nota)) {
+		notas.push(nota);
+	}
+};
+promedio = total / notas.length
+console.log(promedio);
+document.write("<h3>El promedio del curso es: ",promedio, "</h3>");
+</script>
+
+<h2>EJERCICIO 7</h2>
+<script>
+
+document.write("<h3>Ingresa un par de numeros para obtener los modulos entre ellos.</h3>");
+
+var a = window.prompt("Ingresa un numero A: ");
+var b = window.prompt("Ingresa un numero B: ");
+var c;
+
+function calcular (a, b) {
+	if ((a != null || !isNaN(a)) || ((b != null || !isNaN(b)))) {
+	c = a % b;
+	document.write("<h3>El modulo de A, B es: ", c, "</h3>");
+	c = b % a; 
+	document.write("<h3>El modulo de B, A es: ", c, "</h3>");
+	}
+}
+calcular(a,b)
+</script>
+
+<h2>EJERCICIO 8</h2>
+<script>
+
+document.write("<h3>La biblioteca solo soporta 33Kg comprueba si resiste.</h3>");
+
+var x = window.prompt("Ingresa el peso de cada Libro en Kilos: ");
+function calcular (x) {
+	return parseInt(33 / x);
+}
+document.write("<h3>La respisa soporta: ", calcular(x), " libros.</h3>");
+
+</script>
+
+<h2>EJERCICIO 9</h2>
+<script>
+
+document.write("<h3>Vas a cotizar las escaleras de un edificio.</h3>");
+
+var x = window.prompt("Ingresa el costo por escalon: ");
+var y = 3;
+var z = window.prompt("Ingresa la altura del edificio en metros: ");
+var e;
+
+function calcular (x,z) {
+	document.write("El edificio tendra: ", e = z * 3, " escalones y costaran: ", e * x);
+}
+calcular(x,z);
+</script>
+
+<h2>EJERCICIO 10</h2>
+<script>
+document.write("<h3>Calcula cuanta piel has perdido en tus años de vida.</h3>");
+
+var edad = window.prompt("Ingresa tu edad: ");
+var piel = 0.01;
+var dias; 
+
+if (edad != null || !isNaN(edad)) {
+	function calcular (edad) {
+		dias = edad * 365 / 10 * piel;
+		return dias;
+	}
+}
+document.write("<h3>Usted ha perdido: ", calcular(edad), " de piel en su vida</h3>")
+</script>
+
+<h2>EJERCICIO 11</h2>
+<script>
+document.write("<h3>Calcula la cantidad de autos electricos y a gasolina en tu pais.</h3>");
+
+var poblacion = window.prompt("Ingresa la poblacion de tu pais: ");
+var electricos;
+var gasolina;
+
+function carros (poblacion) {
+	electricos = parseInt(poblacion / 1999);
+	gasolina = parseInt(poblacion / 200);
+	return [gasolina, electricos];
+}
+var carros = carros(poblacion);
+document.write("<h3>La cantidad de carros a gasolina es: ", carros[0], " y los carros electricos: ", carros[1], "</h3>"); 
+</script>
+
+<h2>EJERCICIO 12</h2>
+<script>
+document.write("<h3>Averigua cuantas semanas has vivido hasta el momento.</h3>");
+
+var naci = window.prompt("Ingresa tu año de nacimiento: ");
+var año = window.prompt("Ingresa el año actual: ");
+var edad; 
+
+function edad (naci, año) {
+	edad = año - naci;
+	return edad * 12 * 4; 
+}
+document.write("<h3>Usted ha vivido: ", edad(naci, año), " semanas.");
+</script>
+
+<h2>EJERCICIO 13</h2>
+<script>
+
+document.write("<h3>Deseas saber cual es la longitud de tu nuevo campo de futbol.</h3>");
+
+var longitud = window.prompt("Ingresa la longitud del campo de juego: ");
+
+function calcular (longitud) {
+	return (Math.PI * (Math.pow((longitud / 2), 2))); 
+}
+document.write("<h3>El area del campo de juego es: ", calcular(longitud), " metros</h3>");
+
+</script>
+
+
+<h2>EJERCICIO 14</h2>
+<script>
+
+document.write("<h3>Vas a asignar un aumento a tus empleados por buen rendimiento.</h3>");
+
+var empleados = [];
+var sueldos = [];
+
+for (var i = 0; i < 3; i++) {
+	var empleado = window.prompt("Ingresa el nombre: ");
+	var sueldo = window.prompt("Ingresa el sueldo: ");
+	empleados.push(empleado);
+	sueldos.push(sueldo);
+}
+
+sueldos[0] = sueldos[0] * 1.1;
+sueldos[1] = sueldos[1] * 1.12;
+sueldos[2] = sueldos[2] * 1.15;
+
+for (var i = 0; i < 3; i++) {
+	document.write("<h3>", empleados[i], " tiene un sueldo con aumento de: ", sueldos[i], "</h3>");
+}
+</script>
+
+<h2>EJERCICIO 15</h2>
+<script>
+document.write("<h3>Calcula la Hipotenusa.</h3>");
+
+var x = window.prompt("Ingresa el cateto x: ");
+var y = window.prompt("Ingresa el cateto y: ");
+
+function calcular (x, y) {
+	return Math.sqrt((x ^ 2 + y ^ 2));
+}
+document.write("<h3>La Hipotenusa de X y Y es: ", calcular(x,y), "</h3>");
+</script>
+
+<h2>EJERCICIO 16</h2>
+<script>
+document.write("<h3>Calculadora de Areas y Perimetros Basicos.</h3>");
+
+var operacion = window.prompt("Selecciona el tipo de operacion; 1.Circulo, 2.Cuadrado, 3.Triangulo, 4.Rectangulo: ");
+
+if (operacion == 1) {
+	var radio = window.prompt("Ingresa el radio de la circunferencia: ");
+	function calcular_cir (radio) {
+		var area = (Math.PI * (Math.pow((radio), 2)));
+		var perimetro = (2 * Math.PI * radio);
+		return [area, perimetro];
+	}
+	var circulo = calcular_cir(radio);
+	document.write("<h3>El area del circulo es: ", circulo[0], " y su perimetro es: ", circulo[1], "</h3>");
+}
+
+if (operacion == 2) {
+	var longitud = window.prompt("Ingresa la longitud de uno de los lados del cuadrado: ");
+	function calcular_quad (longitud) {
+		var area = (longitud * longitud);
+		var perimetro = (longitud * 4);
+		return [area, perimetro];
+	}
+	var cuadrado = calcular_quad(longitud);
+	document.write("<h3>El area del cuadrado es: ", cuadrado[0], " y su perimetro es: ", cuadrado[1], "</h3>");
+}
+
+if (operacion == 3) {
+	var base = window.prompt("Ingresa la base del triangulo: ");
+	var altura = window.prompt("Ingresa la altura del triangulo: ");
+	var total = 0;
+
+	for (var i = 1; i < 3; i++) {
+		var lado = window.prompt("Ingresa un lado: ");
+		var total = total + parseInt(lado);
+		console.log(total);
+	}
+
+	document.write("<h4>El perimetro del triangulo es: ", total, "</h4>");
+
+	function calcular_trian (base, altura) {
+		var areatrian = ((base * altura) / 2);
+		return areatrian
+	}
+	document.write("<h4>El area del triangulo es: ", calcular_trian(base,altura), "</h4>");
+}
+
+if (operacion == 4) {
+	var ladoA = window.prompt("Ingresa el lado A del rectangulo: ");
+	var ladoB = window.prompt("Ingresa el lado B del rectangulo: ");
+
+	function calcular_rect (ladoA, ladoB) {
+		var arearect = ladoA * ladoB;
+		var perimetro = ((ladoA * 2) + (ladoB * 2));
+		return [arearect, perimetro];
+	}
+	var rectangulo = calcular_rect(ladoA, ladoB);
+	document.write("<h3>El area del rectangulo es: ", rectangulo[0], " y su perimetro es: ", rectangulo[1], "</h3>");
+}
+
+</script>
+
+</body>
+</html>

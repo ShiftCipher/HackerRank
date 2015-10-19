@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Algoritmia 2</title>
+</head>
+<body>
+
+<style> 
+
+body {
+	background-color: black;
+	-webkit-font-smoothing: antialiased !important;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	font-family: Helvetica, sans-serif;
+	color: white;
+	font-size: 90px;
+}
+
+h2 {
+	font-family: Helvetica, sans-serif;
+	color: red;
+	font-size: 30px;
+}
+
+h3 {
+	font-family: Century Gothic, sans-serif;
+	color: white;
+	background-color: color: #333333;
+	font-size: 20px;
+}
+
+h4 {
+	font-family: Century Gothic, sans-serif;
+	color: yellow;
+	background-color: silver;
+	font-size: 12px;
+}
+</style>
+
+<h1>Algoritmia</h1>
+
+
+<h1>FOR</h1>
+
+<h2>EJERCICIO 1</h2>
+
+<script>
+
+var suma = 0; 
+
+for (var i = 0; i < 10; i++) {
+	var numero = window.prompt("Ingresa el numero: ");
+	suma = suma + parseInt(numero);
+};
+document.write("<h3>La sumatoria total de los numeros es: ", suma, "</h3>");
+</script>
+
+<h2>EJERCICIO 2</h2>
+
+<script>
+var cantidad = window.prompt("Ingresa la cantidad de numeros a sumar: ");
+var suma = 0; 
+
+for (var i = 0; i < cantidad; i++) {
+	var numero = window.prompt("Ingresa el numero: ");
+	suma = suma + parseInt(numero);
+};
+document.write("<h3>La sumatoria total de los numeros es: ", suma, "</h3>");
+</script>
+
+<h2>EJERCICIO 3</h2>
+
+<script>
+var cantidad = window.prompt("Ingresa la cantidad de numeros a sumar: ");
+var suma = 0; 
+
+for (var i = 0; i < cantidad; i++) {
+	var numero = window.prompt("Ingresa el numero: ");
+	suma = suma + parseInt(numero);
+};
+document.write("<h3>La sumatoria total de los numeros es: ", suma, "</h3>");
+document.write("<h3>La cantidad de datos sumados es: ", cantidad, "</h3>")
+</script>
+
+<h2>EJERCICIO 4</h2>
+
+<script>
+var notas = 7;
+var suma = 0; 
+var promedio;
+
+for (var i = 0; i < notas; i++) {
+	var numero = window.prompt("Ingresa el numero: ");
+	suma = suma + parseInt(numero);
+	promedio = suma / notas;
+};
+document.write("<h3>El promedio acumulado es: ", promedio, "</h3>")
+</script>
+
+<h2>EJERCICIO 5</h2>
+
+<script>
+var cantidad = window.prompt("Ingresa la cantidad de notas a promediar: ");
+var suma = 0; 
+var promedio;
+
+for (var i = 0; i < cantidad; i++) {
+	var nota = window.prompt("Ingresa la nota: ");
+	suma = suma + parseInt(nota);
+	promedio = suma / cantidad;
+};
+document.write("<h3>El promedio acumulado es: ", promedio, "</h3>")
+</script>
+
+<h2>EJERCICIO 6</h2>
+
+<script>
+var cantidad = window.prompt("Ingresa la cantidad de notas a promediar: ");
+var suma = 0; 
+var aprobadas = 0;
+var reprobadas = 0;
+var promedio;
+
+for (var i = 0; i < cantidad; i++) {
+	var nota = window.prompt("Ingresa la nota: ");
+	if (nota > 3) {
+		aprobadas = aprobadas + 1;
+	} else {
+		reprobadas = reprobadas + 1;
+	}
+	suma = suma + parseInt(nota);
+	promedio = suma / cantidad;
+};
+document.write("<h3>Notas aprobadas: ", aprobadas, "</h3>")
+document.write("<h3>Notas reprobadas: ", reprobadas, "</h3>")
+document.write("<h3>El promedio acumulado es: ", promedio, "</h3>")
+</script>
+
+<h2>EJERCICIO 7</h2>
+
+<script>
+for (var i = 0; i < 10; i++) {
+	var numero = window.prompt("Ingresa el numero: ");
+	if (numero > 0) {
+		document.write("<h3> El numero: " + numero + " es positivo.</h3>");
+	} else {
+		document.write("<h3> El numero: " + numero + " es negativo.</h3>");
+	};
+};
+</script>
+
+
+<h2>EJERCICIO 8</h2>
+
+<script>
+
+var cantidad = window.prompt("Ingresa la cantidad de numeros: ");
+var total = 1;
+var ceros = 0;
+
+for (var i = 0; i < cantidad; i++) {
+	var numero = window.prompt("Ingresa el numero: ");
+	if (numero > 0) {
+		total = total * parseInt(numero);
+	} else {
+		if (numero == 0) {
+			ceros = ceros + 1;
+		} 
+	}
+};
+
+document.write("<h3>La multiplicacion total es: ", total, "</h3>")
+document.write("<h3>El numero total de ceros fue: ", ceros, "</h3>")
+
+</script>
+
+
+<h1>WHILE</h1>
+
+<h2>EJERCICIO 1</h2>
+
+<script>
+
+var cantidad = window.prompt("Ingresa la cantidad de numeros: ");
+var numeros = cantidad;
+var promedio;
+var total = 0;
+
+while (cantidad > 0) {
+	var numero = window.prompt("Ingresa el numero: ");
+	total = total + parseInt(numero);
+	cantidad = cantidad - 1;
+};
+
+promedio = total / numeros; 
+
+document.write("<h3>El promedio total fue: ", promedio, "</h3>");
+</script>
+
+
+<h2>EJERCICIO 2</h2>
+
+<script>
+
+var cantidad = window.prompt("Ingresa la cantidad de numeros: ");
+var numeros = cantidad;
+var promedio;
+var total = 0;
+var positivos = 0;
+var total_positivos = 0;
+var promedio_positivos;
+
+while (cantidad > 0) {
+	var numero = window.prompt("Ingresa el numero: ");
+	total = total + parseInt(numero);
+	cantidad = cantidad - 1;
+	if (numero > 0) {
+		total_positivos = total_positivos + parseInt(numero);
+		positivos = positivos + 1;
+	};
+};
+
+promedio = total / numeros;
+promedio_positivos = total_positivos / positivos;
+
+document.write("<h3>El promedio total fue: ", promedio, "</h3>");
+document.write("<h3>El promedio total de los positivos fue: ", promedio_positivos, "</h3>")
+</script>
+
+<h2>EJERCICIO 3</h2>
+
+<script>
+
+var cantidad = window.prompt("Ingresa la cantidad de gastos: ");
+var total = 0;
+
+while (cantidad > 0) {
+	var gasto = window.prompt("Ingresa el gasto: ");
+	total = total + parseInt(gasto);
+	cantidad = cantidad - 1;
+};
+
+document.write("<h3>El total de gastos fue: ", total, "</h3>");
+</script>
+
+
+<h2>EJERCICIO 4</h2>
+
+<script>
+
+var numero = window.prompt("Ingresa un numero: ");
+var operador = parseInt(numero);
+var promedio;
+var total = 0;
+var pares = 0;
+var impares = 1;
+
+while (operador > 0) {
+	operador = operador % 10;
+	if ((operador % 2) == 0) {
+		total = total + operador;
+		pares = pares + 1;
+		console.log(operador, "Es par");
+	} else {
+		impares = impares * operador;
+		console.log(impares);
+		console.log(operador, "Es Impar");
+	};
+	numero = parseInt(numero / 10);
+	operador = numero;
+};
+
+promedio = total / pares;
+
+document.write("<h3>El promedio de los digitos pares fue: ", promedio, "</h3>");
+document.write("<h3>La multiplicacion de los digitos impares fue: ", impares, "</h3>");
+
+</script>
+
+
+
+<h2>EJERCICIO 5</h2>
+
+<script>
+var total = window.prompt("Ingrese el total de las ventas: ");
+var comision = 0;
+var pago = 5000 + comision;
+var vendedores = 0;
+var venta = 0;
+var ventas = 0;
+
+while (ventas < total) {
+	venta = window.prompt("Ingrese el valor de la venta:");
+	document.write("<h3>La venta realizada fue: ", venta, "</h3>");
+	ventas = ventas + parseInt(venta);
+	comision = pago + venta * 0.09;
+	vendedores = vendedores + 1;
+};
+
+document.write("<h3>El pago con comision fue: ", comision, "</h3>");
+document.write("<h3>La cantidad de vendedores pagados fue: ", vendedores, "</h3>");
+
+</script>
+
+
+
+
+<h1>DO WHILE</h1>
+
+<h2>EJERCICIO 1</h2>
+
+<script>
+
+var A = window.prompt("Ingresa un numero A: ");
+var B = window.prompt("Ingresa un numero B: ");
+var mcmA = A;
+var mcmB = B;
+
+do {
+C = A % B;
+A = B;
+B = C;
+mcm = mcmA * mcmB / A;
+}
+while (B != 0);
+
+document.write("<h3>MCM: ", mcm, "</h3>");
+
+</script>
+
+
+<h2>EJERCICIO 2</h2>
+
+<script>
+var total = window.prompt("Ingrese el total de las ventas: ");
+var comision = 0;
+var pago = 5000 + comision;
+var vendedores = 0;
+var venta = 0;
+var ventas = 0;
+var superiores = 0;
+
+do {
+	venta = window.prompt("Ingrese el valor de la venta:");
+	document.write("<h3>La venta realizada fue: ", venta, "</h3>");
+	ventas = ventas + parseInt(venta);
+	comision = pago + venta * 0.09;
+	vendedores = vendedores + 1;
+	if (comision > 9000) {
+		superiores = superiores + 1;
+	};
+} while (ventas < total);
+
+document.write("<h3>El pago con comision fue: ", comision, "</h3>");
+document.write("<h3>La cantidad de vendedores pagados fue: ", vendedores, "</h3>");
+document.write("<h3>La cantidad de vendedores mayor a 9000 pagados fue: ", superiores, "</h3>");
+
+</script>
+
+
+
+<h2>EJERCICIO 3</h2>
+
+<script>
+
+var total = 0; 
+
+do {
+var articulo = window.prompt("Ingresa el nombre del articulo: ");
+var precio = window.prompt("Ingresa el valor del articulo: ");
+var cantidad = window.prompt("Ingresa la cantidad de productos a comprar del articulo: ");
+
+total = total + precio * cantidad;
+
+document.write("<h3>Producto: ", articulo, ", </h3>");
+document.write("<h3>Precio: ", precio, ", </h3>");
+document.write("<h3>Total: ", total, "</h3>");
+
+var comprar = window.prompt("Desea seguir comprando: ");
+
+switch (comprar) {
+	case "Si", "si", "sI", "SI":
+		comprar = true;
+	case "No", "no", "nO", "NO":
+		comprar = false;
+		break;
+}
+
+} while (comprar);
+
+</script>
+
+
+<h2>EJERCICIO 4</h2>
+
+<script>
+var cantidad = window.prompt("Ingresa la cantidad de alumnos: ");
+var notas = window.prompt("Ingresa la cantidad de notas; ");
+var alumnos = cantidad;
+var promedioalumno;
+var promedio;
+var promediosalumnos = 0;
+var totalnotas = 0;
+var reprobados = 0;
+var superiores = 0;
+var pro = [];
+
+do {
+	for (var i = notas; i > 0; i--) {
+		var nota = window.prompt("Ingresa la nota: "); 
+		nota = Number(nota);
+		if (nota < 3) {
+			console.log("Reprobado");
+		}
+		totalnotas = totalnotas + nota;
+	};
+	promedioalumno = totalnotas / notas;
+	pro.push(promedioalumno);
+	document.write("<h3>Promedio Alumno: ", promedioalumno, "</h3>");
+	promediosalumnos = promediosalumnos + promedioalumno;
+	cantidad = cantidad - 1;
+	totalnotas = 0;
+} while (cantidad > 0);
+
+promedio = promediosalumnos / alumnos;
+console.log(pro);
+
+pro.forEach(function (element) {
+	if (element > promedio) {
+		superiores = superiores + 1;
+	};
+});
+
+document.write("<h3>Promedio General del Grupo: ", promedio, "</h3>");
+document.write("<h3>Alumnos Evaluados: ", alumnos, "</h3>");
+document.write("<h3>Alumnos por Encima del Promedio General: ", superiores, "</h3>");
+document.write("<h3>Alumnos Reprobados: ", reprobados, "</h3>");
+
+</script>
+
+<h2>EJERCICIO 5</h2>
+
+<script>
+var numero = window.prompt("Ingresa un numero: ");
+var operador = parseInt(numero);
+
+while (operador > 0) {
+	operador = operador % 10;
+	console.log(operador);
+	numero = parseInt(numero / 10);
+	operador = numero;
+};
+
+</script>
+
+</body>
+</html>

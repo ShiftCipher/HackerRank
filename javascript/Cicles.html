@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Algorithms</title>
+</head>
+<body>
+
+<style> 
+
+body {
+	background-color: black;
+	-webkit-font-smoothing: antialiased !important;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	font-family: Helvetica, sans-serif;
+	color: white;
+	font-size: 90px;
+}
+
+h2 {
+	font-family: Helvetica, sans-serif;
+	color: red;
+	font-size: 30px;
+}
+
+h3 {
+	font-family: Century Gothic, sans-serif;
+	color: white;
+	background-color: color: #333333;
+	font-size: 20px;
+}
+
+h4 {
+	font-family: Century Gothic, sans-serif;
+	color: yellow;
+	background-color: silver;
+	font-size: 12px;
+}
+
+</style>
+
+
+<h1>Algoritmia</h1>
+
+<script>
+var A = window.prompt("Ingresa un numero: ");
+
+for (var i = 1; i < 11; i++) {
+	var B = A * i;
+	document.write("<h3>",A," x ", i, " es igual a: ", B);
+};
+</script>
+
+<h2>Factorial</h2>
+
+<script>
+var numero = window.prompt("Ingresa un numero: ");
+var resultado = 1;
+
+for (var i = numero; i > 1; i--) {
+	resultado = resultado * i;
+	console.log(resultado);
+};
+
+document.write("<h3>El factorial del numero es: ", resultado, "</h3>");
+</script>
+
+
+<script>
+var numero = window.prompt("Ingresa un numero: ");
+
+for (var i = numero; i > 0; i--) {
+	var numeros = window.prompt("Ingresa un numero: ");
+
+	if ((numeros % 2) != 0) {
+	document.write("<h3>El numero es Impar</h3>", numeros);
+	} else {
+	document.write("<h3>El numero es Par</h3>", numeros);
+	};
+};
+</script>
+-->
+
+<script>
+
+var numero = window.prompt("Ingresa un numero: ");
+var notas = [];
+var total = 0;
+
+for (var i = numero; i > 0; i--) {
+	var nota = window.prompt("Ingresa un numero: ");
+	total = total + parseInt(nota);
+	notas.push(nota);
+	console.log(total);
+	console.log(notas);
+	var promedio = total / notas.length;
+};
+
+document.write("<h3>Tu promedio es: ", promedio, "</h3>");
+
+if (promedio > 3.5) {
+		document.write("<h3>Pasaste!</h3>");
+	} else {
+		document.write("<h3>No Pasaste!</h3>");
+};
+
+</script>
+
+</body>
+</html>
+

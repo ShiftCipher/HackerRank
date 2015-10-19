@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Algoritmia 2</title>
+</head>
+<body>
+
+<style> 
+
+body {
+	background-color: black;
+	-webkit-font-smoothing: antialiased !important;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+h1 {
+	font-family: Helvetica, sans-serif;
+	color: white;
+	font-size: 90px;
+}
+
+h2 {
+	font-family: Helvetica, sans-serif;
+	color: red;
+	font-size: 30px;
+}
+
+h3 {
+	font-family: Century Gothic, sans-serif;
+	color: white;
+	background-color: color: #333333;
+	font-size: 20px;
+}
+
+h4 {
+	font-family: Century Gothic, sans-serif;
+	color: yellow;
+	background-color: silver;
+	font-size: 12px;
+}
+</style>
+
+<h1>Algoritmia</h1>
+
+<h2>EJERCICIO 1</h2>
+
+<script>
+var horas = window.prompt("Calculadora Salarial. Ingresa las horas trabajadas: ");
+var valor = window.prompt("Ingresa el valor de la hora: ");
+
+function Salario (horas, valor) {
+	this.valorSalario = valor;
+	this.horasSalario = horas;
+	this.basicoSalario = function (horas, valor) {
+		return valor * horas;  
+	};
+	this.extraHora = function () {
+		if (horas > 40) {
+			return horas - 40;
+		} else {
+			return 0;
+		};
+	};
+	this.extraValor = function () {
+		if (horas > 40) {
+			return valor * 1.5;
+		} else {
+			return 0;
+		};
+	};
+	this.extraSalario = function () {
+		if (horas <= 40) {
+			return 0;
+		} else { 
+			return this.extraValor(horas) * this.extraHora(horas);
+		};
+	};
+	this.totalSalario = function () {
+		if (horas < 40) {
+			return this.basicoSalario(horas,valor);
+		} else {
+			return this.basicoSalario(horas,valor) + this.extraSalario(horas);
+		};
+	};
+};
+
+var Operario = new Salario(horas,valor);
+
+document.write("<h3>Tu salario es: ", Operario.basicoSalario(horas, valor), " y tienes un salario adicional de: ", Operario.extraSalario(horas), " para un total de: ", Operario.totalSalario(horas),"</h3>)");
+</script>
+
+<h2>EJERCICIO 2</h2>
+
+<script>
+var sueldo = window.prompt("Calculadora Horas Extra. Ingresa el sueldo: ");
+var descuento;
+var adicional;
+
+if (sueldo <= 1000) {
+	descuento = sueldo * 0.1;
+} else { 
+	if (sueldo > 1000) {
+		if (sueldo <= 2000) {
+			adicional = sueldo - 1000;
+			descuento = adicional * 0.05;
+		} else {
+			if (sueldo > 2000) {
+				adicional = sueldo - 1000;
+				descuento = adicional * 0.03;
+			};
+		};
+	};
+};
+
+document.write("<h3>Tu sueldo neto es: ", sueldo, " y tienes un descuento de: ", descuento, "</h3>)");
+</script>
+
+<h2>EJERCICIO 3</h2>
+
+<script>
+var nombre = window.prompt("Calculadora Tienda. Ingresa el nombre: ");
+var cantidad = window.prompt("Ingresa el cantidad: ");
+var precio = window.prompt("Ingresa el precio: ");
+
+var subtotal = cantidad * precio;
+var iva = subtotal * 0.16;
+var total = subtotal + iva;
+if (total > 50000) {
+	var descuento = total * 0.05;
+	total = total - descuento;
+} else {
+	descuento = 0;
+}
+
+document.write(
+	"<h3>Articulo: ", nombre,
+	"</h3>\n<h3>Precio: ", precio,
+	"</h3>\n<h3>Cantidad: ", cantidad,
+	"</h3>\n<h3>Subtotal: ", subtotal,
+	"</h3>\n<h3>Iva 16%: ", iva,
+	"</h3>\n<h3>Descuento: ", descuento,
+	"</h3>\n<h3>TOTAL: ", total, "</h3>"
+	);
+</script>
+
+<h2>EJERCICIO 4</h2>
+
+<script>
+var numero = window.prompt("Calculadora Par - Impar. Ingresa un Numero: ");
+
+if ((numero % 2) != 0) {
+	document.write("<h3>El numero es Impar</h3>");
+} else {
+	document.write("<h3>El numero es Par</h3>");
+};
+
+if (numero < 0) {
+	document.write("<h3>El numero es Negativo</h3>");
+} else {
+	document.write("<h3>El numero es Positivo</h3>");
+};
+</script>
+
+
+<h2>EJERCICIO 5</h2>
+
+<script>
+var edad = window.prompt("Calculadora Edad. Ingresa tu Edad: ");
+
+if (edad > 0) {
+	if (edad <  10) {
+	document.write("<h3>Eres un Niño</h3>");
+	};
+
+	if (edad > 10) {
+		if (edad < 15) {
+			document.write("<h3>Eres un Puberto</h3>");
+		};
+	};
+
+	if (edad > 14) {
+		if (edad < 19) {
+			document.write("<h3>Eres un Adolescente</h3>");
+		};
+	};
+
+	if (edad > 18) {
+		if (edad < 26) {
+			document.write("<h3>Eres un Joven</h3>")
+		} else {
+			document.write("<h3>Eres un Adulto</h3>")
+		};
+	};
+};
+
+</script>
+
+
+<h2>EJERCICIO 6</h2>
+<script>
+var numero = window.prompt("Calculadora Romana. Ingresa un entero entre 1 y 99: ");
+
+var romanos = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+var romanosx = ["X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
+
+if (numero < 10) {
+	switch (parseInt(numero)) {
+		case 1:
+		document.write("<h3>El numero en romano es: ", romanos[0],"</h3>");
+			break;
+		case 2:
+		document.write("<h3>El numero en romano es: ", romanos[1],"</h3>");
+			break;
+		case 3:
+		document.write("<h3>El numero en romano es: ", romanos[2],"</h3>");
+			break;
+		case 4: 
+		document.write("<h3>El numero en romano es: ", romanos[3],"</h3>");
+			break;
+		case 5:
+		document.write("<h3>El numero en romano es: ", romanos[4],"</h3>");
+			break;
+		case 6:
+		document.write("<h3>El numero en romano es: ", romanos[5],"</h3>");
+			break;
+		case 7: 
+		document.write("<h3>El numero en romano es: ", romanos[6],"</h3>");
+			break;
+		case 8: 
+		document.write("<h3>El numero en romano es: ", romanos[7],"</h3>");
+			break;
+		case 9: 
+		document.write("<h3>El numero en romano es: ", romanos[8],"</h3>");
+			break;
+	};
+} else {
+	var a = numero / 10;
+	var b = numero % 10;
+	switch (parseInt(a)) {
+		case 1: 
+		document.write("<h3>El numero en romano es: ", romanosx[0],"</h3>");
+			break;
+		case 2: 
+		document.write("<h3>El numero en romano es: ", romanosx[1],"</h3>");
+			break;
+		case 3: 
+		document.write("<h3>El numero en romano es: ", romanosx[2],"</h3>");
+			break;
+		case 4: 
+		document.write("<h3>El numero en romano es: ", romanosx[3],"</h3>");
+			break;
+		case 5: 
+		document.write("<h3>El numero en romano es: ", romanosx[4],"</h3>");
+			break;
+		case 6: 
+		document.write("<h3>El numero en romano es: ", romanosx[5],"</h3>");
+			break;
+		case 7: 
+		document.write("<h3>El numero en romano es: ", romanosx[6],"</h3>");
+			break;
+		case 8: 
+		document.write("<h3>El numero en romano es: ", romanosx[7],"</h3>");
+			break;
+		case 9: 
+		document.write("<h3>El numero en romano es: ", romanosx[8],"</h3>");
+			break;
+	};
+	switch (parseInt(b)) {
+		case 1: 
+		document.write("<h3>", romanos[0],"</h3>");
+			break;
+		case 2: 
+		document.write("<h3>", romanos[1],"</h3>");
+			break;
+		case 3: 
+		document.write("<h3>", romanos[2],"</h3>");
+			break;
+		case 4: 
+		document.write("<h3>", romanos[3],"</h3>");
+			break;
+		case 5: 
+		document.write("<h3>", romanos[4],"</h3>");
+			break;
+		case 6: 
+		document.write("<h3>", romanos[5],"</h3>");
+			break;
+		case 7: 
+		document.write("<h3>", romanos[6],"</h3>");
+			break;
+		case 8: 
+		document.write("<h3>", romanos[7],"</h3>");
+			break;
+		case 9: 
+		document.write("<h3>", romanos[8],"</h3>");
+			break;
+	};
+};
+
+</script>
+
+<h2>EJERCICIO 7</h2>
+<script>
+var nombre = window.prompt("Calculadora ASEO. Ingresa el nombre del cliente: ");
+var tipo = window.prompt("Ingresa el tipo del cliente 1 - 4: ");
+var recogedores = window.prompt("Ingresa el valor de los Recogedores: ");
+var escobas = window.prompt("Ingresa el valor de las Escobas: ");
+var aromatizantes = window.prompt("Ingresa el valor de los Aromatizantes: ");
+var subtotal;
+var iva;
+var total;
+var descuento;
+
+var numRecogedores = window.prompt("Ingresa la cantidad de Recogedores a comprar: ");
+var numEscobas = window.prompt("Ingresa la cantidad de Escobas a comprar: ");
+var numAromatizantes = window.prompt("Ingresa la cantidad de Aromatizantes a comprar: ");
+
+
+subtotal = (recogedores * numRecogedores) + (escobas * numEscobas) + (aromatizantes * numAromatizantes)
+
+if (tipo == 1) {
+	descuento = subtotal * 0.05;
+	tipo = "1";
+};
+if (tipo == 2) {
+	descuento = subtotal * 0.08;
+	tipo = "2";
+};
+if (tipo == 3) {
+	descuento = subtotal * 0.12;
+	tipo = "3"
+};
+if (tipo == 4) {
+	descuento = subtotal * 0.15;
+	tipo = "4"
+};
+
+total = subtotal - descuento
+
+document.write(
+	"<h3>Cliente: ", nombre, 
+	"</h3>\n<h3>Tipo: ", tipo, 
+	"</h3>\n<h3>Precio Escobas: ", escobas,
+	"</h3>\n<h3>Cantidad Escobas: ", numEscobas,
+	"</h3>\n<h3>Precio Recogedores: ", recogedores,
+	"</h3>\n<h3>Cantidad Recogedores: ", numRecogedores,
+	"</h3>\n<h3>Precio Aromatizantes: ", aromatizantes,
+	"</h3>\n<h3>Cantidad Aromatizantes: ", numAromatizantes,
+	"</h3>\n<h3>Precio: ", precio, 
+	"</h3>\n<h3>Cantidad: ", cantidad,
+	"</h3>\n<h3>Subtotal: ", subtotal,
+	"</h3>\n<h3>Descuento: ", descuento,
+	"</h3>\n<h3>TOTAL: ", total, 
+	"</h3>"
+	);
+
+</script>
+
+
+<h2>EJERCICIO 8</h2>
+<script>
+var a = window.prompt("Calculadora Cuadratica. Ingresa el valor de A: ");
+var b = window.prompt("Ingresa el valor de B: ");
+var c = window.prompt("Ingresa el valor de C: ");
+	
+function Quad(a, b, c) {
+	a = parseFloat(a);
+	b = parseFloat(b);
+	c = parseFloat(c);
+  	var X1 = -b / 2.0 / a + Math.pow(Math.pow(b, 2) - 4.0 * a * c, 0.5) / (2.0 * a);
+  	var X2 = -b / 2.0 / a - Math.pow(Math.pow(b, 2) - 4.0 * a * c, 0.5) / (2.0 * a);
+  return {
+    "X1": X1,
+    "X2": X2
+  };
+}
+var Quad = Quad(a, b, c);
+
+if (Quad.X1 == NaN) {
+	Quad.X1 = "Imaginario";
+}
+
+if (Quad.X2 == NaN) {
+	Quad.X2 = "Imaginario";
+}
+
+document.write("<h3>X1 = " + Quad.X1, "</h3>");
+document.write("<h3>X2 = " + Quad.X2, "</h3>");
+
+</script>
+
+
+<h2>EJERCICIO 9</h2>
+<script>
+var angulo = window.prompt("Calculadora de Angulos. Ingresa el angulo en grados: ");
+
+if (angulo < 90) {
+	document.write("<h3>Es un angulo Agudo</h3>");
+};
+if (angulo == 90) {
+	document.write("<h3>Es un angulo Recto</h3>")
+}
+if (angulo > 90) {
+	if (angulo < 180) {
+		document.write("<h3>Es un angulo Obtuso</h3>")
+	};
+	if (angulo == 180) {
+		document.write("<h3>Es un angulo Llano</h3>")
+	};
+}
+if (angulo > 180) {
+	if (angulo < 360) {
+		document.write("<h3>Es un angulo Concavo</h3>")
+	};
+};
+
+</script>
+
+<h2>EJERCICIO 10</h2>
+
+<script>
+var numeros = [];
+
+for (var i = 0; 3 > i; i++) {
+	var numero = window.prompt("Calculadora de Maximos. Ingresa un numero entero: ");
+	numeros.push(numero);
+	console.log(numeros);
+};
+if (numeros[0] > numeros[1]) {
+	if (numeros[0] > numeros[2]) {
+        document.write("<h3>A es el Maximo</h3>");
+    } else {
+    	document.write("<h3>C es el Maximo</h3>");
+    };
+} else {
+	if(numeros[1] > numeros[2]) {
+	    document.write("<h3>B es el Maximo</h3>");
+	} else {
+		document.write("<h3>C es el Maximo</h3>");
+	};
+};
+</script>
+
+</body>
+</html>
